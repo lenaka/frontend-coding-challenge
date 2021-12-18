@@ -1,7 +1,18 @@
+import React, { ReactChildren } from 'react';
 import styled from 'styled-components';
+
 import theme from '../theme';
 
-const Button = styled.button`
+type Props = {
+  children?: ReactChildren | string;
+  onClick?(): void;
+};
+
+const Button = ({ onClick, children }: Props) => {
+  return <WrapperButton onClick={onClick}>{children}</WrapperButton>
+}
+
+const WrapperButton = styled.button`
   background: transparent;
   border: 1px solid ${theme.palette.secondary.main};
   border-radius: ${theme.borderRadius};
