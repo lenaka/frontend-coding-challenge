@@ -20,7 +20,9 @@ const SearchInput = () => {
     }
   }, [debouncedValue, dispatch]);
 
-  return <Input placeholder={'Search tournament ...'} onChange={handleOnChange} />;
+  return (
+    <Input placeholder={'Search tournament ...'} onChange={handleOnChange} />
+  );
 };
 
 export default SearchInput;

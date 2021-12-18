@@ -9,7 +9,13 @@ type Props = Partial<HTMLInputElement> & {
 };
 
 const Input = forwardRef<HTMLInputElement, Props>((props: Props, ref) => {
-  return <WrapperInput ref={ref} placeholder={props.placeholder} onChange={props.onChange} />;
+  return (
+    <WrapperInput
+      ref={ref}
+      placeholder={props.placeholder}
+      onChange={props.onChange}
+    />
+  );
 });
 
 const WrapperInput = styled.input`

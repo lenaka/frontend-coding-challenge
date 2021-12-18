@@ -13,7 +13,11 @@ const useEditCard = () => {
     const newName = window?.prompt('New Tournament Name:', props?.name);
 
     if (newName !== null) {
-      dispatch(props?.id ? editTournament({ id: props.id, value: newName }) : addTournament({ value: newName }));
+      dispatch(
+        props?.id
+          ? editTournament({ id: props.id, value: newName })
+          : addTournament({ value: newName })
+      );
     }
   };
 

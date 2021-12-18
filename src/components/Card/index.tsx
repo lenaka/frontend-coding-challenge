@@ -17,27 +17,31 @@ const Card = (props: Props) => {
 
   const handleOnEdit = () => {
     onEdit({ id: props.id, name: props.name });
-  }
+  };
 
   const handleOnDelete = () => {
     if (window?.confirm('Do you really want to delete this tournament?')) {
       dispatch(deleteTournament(props.id));
     }
-  }
+  };
 
-  return <Root>
-    <H6>{props.name}</H6>
+  return (
+    <Root>
+      <H6>{props.name}</H6>
 
-    <div>Organizer: {props.organizer}</div>
-    <div>Game: {props.game}</div>
-    <div>Participants: {props.participants.current}/{props.participants.max}</div>
-    <div>Start: {dateFromIsoConvert(props.startDate)}</div>
+      <div>Organizer: {props.organizer}</div>
+      <div>Game: {props.game}</div>
+      <div>
+        Participants: {props.participants.current}/{props.participants.max}
+      </div>
+      <div>Start: {dateFromIsoConvert(props.startDate)}</div>
 
-    <WrapperButtons>
-      <Button onClick={handleOnEdit}>Edit</Button>
-      <Button onClick={handleOnDelete}>Delete</Button>
-    </WrapperButtons>
-  </Root>;
+      <WrapperButtons>
+        <Button onClick={handleOnEdit}>Edit</Button>
+        <Button onClick={handleOnDelete}>Delete</Button>
+      </WrapperButtons>
+    </Root>
+  );
 };
 
 const Root = styled.div`

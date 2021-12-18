@@ -8,9 +8,15 @@ import { selectList } from '../../selectors/tournaments';
 const CardList = () => {
   const tournaments = useSelector(selectList);
 
-  return tournaments.length
-    ? <Root>{tournaments.map(card => <Card {...card} key={card.id} />)}</Root>
-    : <WrapperNoData>No tournaments found.</WrapperNoData>;
+  return tournaments.length ? (
+    <Root>
+      {tournaments.map(card => (
+        <Card {...card} key={card.id} />
+      ))}
+    </Root>
+  ) : (
+    <WrapperNoData>No tournaments found.</WrapperNoData>
+  );
 };
 
 const Root = styled.div`

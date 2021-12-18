@@ -6,35 +6,40 @@ interface ApiConfig {
 
 type SaveRequestProps = {
   method?: 'get' | 'delete' | 'put' | 'post';
-  data?: object,
+  data?: object;
   url?: string;
 };
 
 const Api = (config: ApiConfig) => {
   const instance = axios.create({
-    baseURL: config.baseUrl,
+    baseURL: config.baseUrl
   });
 
   let lastRequest: SaveRequestProps = {};
 
-  instance.interceptors.response.use((response) => {
-    return response;
-  }, (error) => {
-    const config = error?.response?.config || error.config;
-    console.log('!!', config.method);
+  instance.interceptors.response.use(
+    response => {
+      return response;
+    },
+    error => {
+      const config = error?.response?.config || error.config;
+      console.log('!!', config.method);
 
-    if (config.method !== 'retry') {
-      lastRequest = {
-        method: config.method,
-        url: config.url,
+      if (config.method !== 'retry') {
+        lastRequest = {
+          method: config.method,
+          url: config.url
+        };
+
+        if (config.data) {
+          lastRequest.data = config.data;
+        }
       }
+      console.log(lastRequest);
 
-      if (config.data) { lastRequest.data = config.data; }
+      return Promise.reject(error);
     }
-    console.log(lastRequest);
-
-    return Promise.reject(error);
-  });
+  );
 
   return {
     get: (url: string) => instance.get(url),
@@ -51,7 +56,7 @@ const Api = (config: ApiConfig) => {
 };
 
 const apiConfig = {
-  baseUrl: process.env.REACT_APP_API_BASE_URL as string,
+  baseUrl: process.env.REACT_APP_API_BASE_URL as string
 };
 
-export default Api(apiConfig)
+export default Api(apiConfig);

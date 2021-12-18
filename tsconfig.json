@@ -17,9 +17,7 @@
   },
   "include": ["src"],
   "linterOptions": {
-    "exclude": [
-      "packages/pcidss-google-analytics/src"
-    ]
+    "exclude": ["packages/pcidss-google-analytics/src"]
   },
   "rules": {
     "array-type": [true, "array-simple"],
@@ -60,13 +58,23 @@
     "no-unused-expression": true,
     "no-var-keyword": true,
     "object-literal-shorthand": true,
-    "only-arrow-functions": [true, "allow-declarations", "allow-named-functions"],
+    "only-arrow-functions": [
+      true,
+      "allow-declarations",
+      "allow-named-functions"
+    ],
     "prefer-const": true,
     "radix": true,
     "semicolon": [true, "always", "ignore-bound-class-methods"],
     "switch-default": true,
     "triple-equals": [true, "allow-null-check"],
     "use-isnan": true,
-    "variable-name": [true, "check-format", "ban-keywords", "allow-leading-underscore", "allow-pascal-case"]
+    "variable-name": [
+      true,
+      "check-format",
+      "ban-keywords",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ]
   }
 }

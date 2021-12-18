@@ -27,7 +27,7 @@ const Main: FC = () => {
 
   const handleOnRetry = () => {
     dispatch(retryFetch());
-  }
+  };
 
   return (
     <Container>

@@ -9,8 +9,8 @@ type Props = {
 };
 
 const Button = ({ onClick, children }: Props) => {
-  return <WrapperButton onClick={onClick}>{children}</WrapperButton>
-}
+  return <WrapperButton onClick={onClick}>{children}</WrapperButton>;
+};
 
 const WrapperButton = styled.button`
   background: transparent;

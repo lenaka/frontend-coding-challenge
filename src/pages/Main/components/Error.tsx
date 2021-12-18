@@ -7,10 +7,12 @@ type Props = {
   onRetry(): void;
 };
 
-const Error = ({ onRetry }: Props) => (<Root>
-  <TextWrapper>Something went wrong.</TextWrapper>
-  <Button onClick={onRetry}>RETRY</Button>
-</Root>);
+const Error = ({ onRetry }: Props) => (
+  <Root>
+    <TextWrapper>Something went wrong.</TextWrapper>
+    <Button onClick={onRetry}>RETRY</Button>
+  </Root>
+);
 
 const Root = styled.div`
   text-align: center;
