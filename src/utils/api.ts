@@ -23,7 +23,6 @@ const Api = (config: ApiConfig) => {
     },
     error => {
       const config = error?.response?.config || error.config;
-      console.log('!!', config.method);
 
       if (config.method !== 'retry') {
         lastRequest = {
@@ -35,7 +34,6 @@ const Api = (config: ApiConfig) => {
           lastRequest.data = config.data;
         }
       }
-      console.log(lastRequest);
 
       return Promise.reject(error);
     }
@@ -47,7 +45,6 @@ const Api = (config: ApiConfig) => {
     put: (url: string, data: object) => instance.put(url, data),
     delete: (url: string) => instance.delete(url),
     retry: () => {
-      console.log('RETRY', lastRequest);
       if (lastRequest.method && lastRequest.url) {
         return instance[lastRequest.method](lastRequest.url, lastRequest?.data);
       }

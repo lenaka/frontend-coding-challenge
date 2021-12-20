@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Card from '../Card';
+import Card from './Card';
 import { useSelector } from 'react-redux';
-import { selectList } from '../../selectors/tournaments';
+import { selectList } from '../selectors/tournaments';
 
 const CardList = () => {
   const tournaments = useSelector(selectList);

@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
-import Input from '../Input';
-import useDebounce from '../../hooks/useDebounce';
-import { loadTournaments } from '../../actions/tournaments';
+import Input from './Input';
+import useDebounce from '../hooks/useDebounce';
+import { loadTournaments } from '../actions/tournaments';
 
 const SearchInput = () => {
   const dispatch = useCallback(useDispatch(), []);

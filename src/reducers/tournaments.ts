@@ -42,8 +42,6 @@ const transformStateOnFulfilled = (
   state.loading = false;
   state.error = false;
 
-  console.log('TYPE', type);
-
   switch (_type) {
     case 'loadTournaments':
       state.list = action.payload;
@@ -56,7 +54,6 @@ const transformStateOnFulfilled = (
       );
       break;
     case 'addTournament':
-      console.log(action.payload);
       state.list.unshift(action.payload);
       break;
   }

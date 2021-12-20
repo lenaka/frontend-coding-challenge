@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import H6 from '../H6';
-import { TournamentItemState } from '../../reducers/tournaments';
+import H6 from './H6';
+import { TournamentItemState } from '../reducers/tournaments';
 import { useDispatch } from 'react-redux';
-import Button from '../Button';
-import { deleteTournament } from '../../actions/tournaments';
-import { dateFromIsoConvert } from '../../utils/date';
-import useEditCard from '../../hooks/useEditCard';
+import Button from './Button';
+import { deleteTournament } from '../actions/tournaments';
+import { dateFromIsoConvert } from '../utils/date';
+import useEditCard from '../hooks/useEditCard';
 
 type Props = TournamentItemState;
 
